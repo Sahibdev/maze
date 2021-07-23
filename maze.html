@@ -1,0 +1,16 @@
+
+<html>
+    <script src="https://code.angularjs.org/1.3.9/angular.min.js"></script>
+    <script src="mazesolution.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+<body ng-app="myapp">
+<div ng-controller="MainCtrl" class="container">
+    <h1>Select text file</h1>
+      <input type="file" on-read-file="showContent($fileContent)" />
+      <div ng-if="content">
+          <h2>File content is:</h2>
+          <pre>{{ content }}</pre>
+      </div>
+    </div>
+</body>
+</html>

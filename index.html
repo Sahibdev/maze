@@ -1,0 +1,23 @@
+<html>
+<script src="https://code.angularjs.org/1.3.9/angular.min.js"></script>
+<script src="index.js"></script>
+<script src="mazesolution.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css">
+<body>
+<div ng-app="mazemaker" ng-controller="mazeCtrl as ctrl">
+    <button ng-click="ctrl.newMaze()">New Maze</button>
+    <button ng-click="ctrl.loadmaze()">Load</button>
+    <table>
+        <tr ng-repeat="row in ctrl.maze track by $index">
+            <td ng-repeat="col in row track by $index" ng-class="{ 'wall' : col === 1, 'pillar' : col === 2, 'start' : col === 3, 'finish' : col === 4 }"></td>
+        </tr>
+    </table>
+    <button ng-click="ctrl.userup()">Up</button>
+    <button ng-click="ctrl.userdown()">Down</button>
+    <button ng-click="ctrl.userleft()">Left</button>
+    <button ng-click="ctrl.userright()">Right</button>
+    <button ng-click="ctrl.solve()">Solve</button>
+</div>
+ 
+</body>
+</html>
